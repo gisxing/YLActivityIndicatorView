@@ -1,42 +1,10 @@
 YLActivityIndicatorView
 =======================
+a fork from http://github.com/yuanlizbyy
 
-A facebook like loading indicator. Used in [here](https://itunes.apple.com/us/app/you-xi-jie-shuo-shi-pin-xing/id596678901?ls=1&mt=8) and [here](https://itunes.apple.com/cn/app/you-xi-jie-shuo-shi-pin-ying/id599921630?mt=8).
+add a style flag while init the Indicator.
 
-Like this: ![loading.gif](https://github.com/yuanlizbyy/YLActivityIndicatorView/blob/master/facebook_loading.gif?raw=true)
-
-![screenshot.png](https://raw.github.com/yuanlizbyy/YLActivityIndicatorView/master/screenshot.png)
-
-## Example Usage
-
-```objective-c
-YLActivityIndicatorView* v1 = [[YLActivityIndicatorView alloc] init];
-v1.center = CGPointMake(160, 20);
-[self.view addSubview:v1];
-[v1 startAnimating];
-
-YLActivityIndicatorView* v2 = [[YLActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 20)];
-v2.center = CGPointMake(160, 55);
-v2.duration = .8f;
-[self.view addSubview:v2];
-[v2 startAnimating];
-
-YLActivityIndicatorView* v3 = [[YLActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 15)];
-v3.center = CGPointMake(160, 90);
-v3.dotCount = 5;
-[self.view addSubview:v3];
-[v3 startAnimating];
-```
-## Contact
-
-Eric Yuan
-- http://github.com/yuanlizbyy
-- weibo: [@袁力Eric](http://weibo.com/u/1820824225)
-- http://yuan.li
-- yuanlizbyy@gmail.com
-
-## License
-
-YLActivityIndicatorView is available under the MIT license. 
+style 0: the Rects behind current step will not show
+style 1: the Rects behind current step will show in fade out effect   COOLer , so i make this style as default . enjoy !
 
 
