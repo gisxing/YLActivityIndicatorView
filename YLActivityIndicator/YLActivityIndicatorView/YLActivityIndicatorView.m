@@ -13,6 +13,7 @@
 @synthesize hidesWhenStopped = _hidesWhenStopped;
 @synthesize dotCount = _dotCount;
 @synthesize duration = _duration;
+@synthesize style = _style;
 
 - (void)setDefaultProperty
 {
@@ -21,6 +22,7 @@
     _isAnimating = NO;
     _duration = .6f;
     _hidesWhenStopped = YES;
+    _style = 1;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -30,9 +32,24 @@
         // Initialization code
         [self setDefaultProperty];
         self.backgroundColor = [UIColor clearColor];
+
     }
     return self;
 }
+
+- (id)initWithFrame:(CGRect)frame withStyle:(NSInteger)style
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        [self setDefaultProperty];
+        self.backgroundColor = [UIColor clearColor];
+        _style = style;
+        
+    }
+    return self;
+}
+
 
 - (id)init
 {
@@ -90,7 +107,23 @@
                                 blue:167.0f/255.0f
                                alpha:1];
     } else if (_currentStep < index) {
-        return [UIColor clearColor];
+        switch (_style) {
+            case 0:
+                return [UIColor clearColor];
+                break;
+            case 1:
+                return [UIColor colorWithRed:239.0f/255.0f
+                                       green:242.0f/255.0f
+                                        blue:246.0f/255.0f
+                                       alpha:1.0f/index];
+                break;
+            default:
+                return [UIColor clearColor];
+                break;
+        }
+
+        
+        
     } else {
         if (_currentStep - index == 1) {
             return [UIColor colorWithRed:158.0f/255.0f
@@ -114,7 +147,21 @@
                                 blue:195.0f/255.0f
                                alpha:1];
     } else if (_currentStep < index) {
-        return [UIColor clearColor];
+        switch (_style) {
+            case 0:
+                return [UIColor clearColor];
+                break;
+            case 1:
+                return [UIColor colorWithRed:244.0f/255.0f
+                                       green:246.0f/255.0f
+                                        blue:249.0f/255.0f
+                                       alpha:1.0f/index];
+                break;
+            default:
+                return [UIColor clearColor];
+                break;
+        }
+
     } else {
         if (_currentStep - index == 1) {
             return [UIColor colorWithRed:189.0f/255.0f
@@ -159,7 +206,8 @@
 
 - (void)repeatAnimation
 {
-    _currentStep = ++_currentStep % (_dotCount*2+1);
+    //_currentStep = ++_currentStep % (_dotCount*2+1);
+    _currentStep = ++_currentStep % (_dotCount);
     [self setNeedsDisplay];
 }
 

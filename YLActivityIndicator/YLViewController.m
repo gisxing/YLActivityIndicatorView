@@ -26,13 +26,16 @@
     
     YLActivityIndicatorView* v2 = [[YLActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 20)];
     v2.center = CGPointMake(160, 55);
-    v2.duration = .8f;
+    v2.duration = 2.8f;
+    v2.style = 0;
     [self.view addSubview:v2];
     [v2 startAnimating];
     
-    YLActivityIndicatorView* v3 = [[YLActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 15)];
+    YLActivityIndicatorView* v3 = [[YLActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 80, 15)];
     v3.center = CGPointMake(160, 90);
-    v3.dotCount = 5;
+    v3.dotCount = 10;
+    v3.duration = 3.8f;
+    //v3.style = 0;
     [self.view addSubview:v3];
     [v3 startAnimating];
 }

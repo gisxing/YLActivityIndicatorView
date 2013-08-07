@@ -15,11 +15,13 @@
     NSInteger _currentStep;
     NSInteger _dotCount;
     CGFloat   _duration;
+    NSInteger _style;       // 0 后续方框不显示, 1: 后续方框显示
 }
 
 @property (nonatomic, assign)BOOL hidesWhenStopped;
 @property (nonatomic, assign)NSInteger dotCount;
 @property (nonatomic, assign)CGFloat duration;
+@property (nonatomic, assign)NSInteger style;
 
 - (void)startAnimating;
 - (void)stopAnimating;
